@@ -5,7 +5,7 @@ const hbs = require("hbs");
 const Geocode = require("./utils/geoCodeFunction.js");
 const weather = require("./utils/TemperatureFunction.js");
 const request = require("request");
-
+const name = "Mohamed"
 
 const temlateDir = path.join(__dirname, "../src/Templates/views");
 
