@@ -48,3 +48,9 @@ button {
     color: white;
     padding: 8px;
 }
+
+.imageStyle {
+    height: 400px;
+    width: 300px;
+    align-self: auto;
+}
