@@ -5,7 +5,7 @@ const hbs = require("hbs");
 const Geocode = require("./utils/geoCodeFunction.js");
 const weather = require("./utils/TemperatureFunction.js");
 const request = require("request");
-const name = "Mohamed"
+const port = process.env.PORT || 3000;
 
 const temlateDir = path.join(__dirname, "../src/Templates/views");
 
@@ -27,7 +27,8 @@ app.get("", (request, response) => {
 app.get("/about", (request, response) => {
     response.render("about", {
         title: "Aboute",
-        name: "Mohamed Alaa"
+        name: "Mohamed Alaa",
+        Content: "Weather application to get the current weather of specific location"
     });
 });
 
@@ -89,6 +90,6 @@ app.get("*", (request, response) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log("the server has started!");
+app.listen(port, () => {
+    console.log("the server has started on port " + port);
 });
