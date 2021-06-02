@@ -28,7 +28,7 @@ app.get("/about", (request, response) => {
     response.render("about", {
         title: "Aboute",
         name: "Mohamed Alaa",
-        Content: "Weather application to get the current weather of specific location"
+        Content: "This Weather application was created by Mohamed Alaa.      using API from mapbox and weather stack API"
     });
 });
 
