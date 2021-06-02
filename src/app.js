@@ -28,7 +28,7 @@ app.get("/about", (request, response) => {
     response.render("about", {
         title: "Aboute",
         name: "Mohamed Alaa",
-        Content: "This Weather application was created by Mohamed Alaa.      using API from mapbox and weather stack API"
+        Content: "This Weather application was created by Mohamed Alaa.  using API from mapbox and weather stack API"
     });
 });
 
@@ -57,15 +57,15 @@ app.get("/weather", (request, response) => {
             return response.send({ error })
         }
 
-        weather(longitude, Latitude, (error, forcastData) => {
+        weather(longitude, Latitude, (error, { Temperature, Humidity }) => {
             if (error) {
                 return response.send(error);
             }
 
 
-            console.log(forcastData);
             response.send({
-                Temperature: forcastData,
+                Temperature,
+                Humidity,
                 Place_name
             })
         })

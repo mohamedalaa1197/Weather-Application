@@ -1,5 +1,6 @@
 const request = require("request")
 
+
 const weatherFun = (longitude, Latitude, callback) => {
 
     const url = "http://api.weatherstack.com/current?access_key=e4a55eafb29e25832c042fafe963d586&query=" + longitude + "," + Latitude + "&units=m"
@@ -8,12 +9,12 @@ const weatherFun = (longitude, Latitude, callback) => {
 
         if (error) {
             callback("Ther is no network Connection!", undefined);
-
         } else if (body.sucess === false) {
             callback(body.error.info, undefined);
         } else {
             callback(undefined, {
-                Temperature: body.current.temperature
+                Temperature: body.current.temperature,
+                Humidity: body.current.humidity
             });
 
         }
