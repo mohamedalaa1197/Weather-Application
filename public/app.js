@@ -3,6 +3,7 @@ const searchElement = document.querySelector("input");
 const message01 = document.querySelector("#message-01");
 const message02 = document.querySelector("#message-02");
 const message03 = document.querySelector("#message-03");
+const message04 = document.querySelector("#message-04");
 
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -10,7 +11,7 @@ weatherForm.addEventListener("submit", (e) => {
     message01.textContent = "loading....";
     message02.textContent = " ";
     message03.textContent = " ";
-
+    message04.textContent = " ";
     fetch("/weather?location=" + searchElement.value)
         .then((response) => {
 
@@ -24,6 +25,8 @@ weatherForm.addEventListener("submit", (e) => {
                     message02.textContent = "Temperature is: " + data.Temperature;
 
                     message03.textContent = "Humidity is: " + data.Humidity;
+
+                    message04.textContent = "Visability is: " + data.visibility;
                 }
             })
         });

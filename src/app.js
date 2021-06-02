@@ -57,7 +57,7 @@ app.get("/weather", (request, response) => {
             return response.send({ error })
         }
 
-        weather(longitude, Latitude, (error, { Temperature, Humidity }) => {
+        weather(longitude, Latitude, (error, { Temperature, Humidity, visibility }) => {
             if (error) {
                 return response.send(error);
             }
@@ -66,6 +66,7 @@ app.get("/weather", (request, response) => {
             response.send({
                 Temperature,
                 Humidity,
+                visibility,
                 Place_name
             })
         })

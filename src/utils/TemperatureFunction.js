@@ -14,7 +14,8 @@ const weatherFun = (longitude, Latitude, callback) => {
         } else {
             callback(undefined, {
                 Temperature: body.current.temperature,
-                Humidity: body.current.humidity
+                Humidity: body.current.humidity,
+                visibility: body.current.visibility
             });
 
         }
